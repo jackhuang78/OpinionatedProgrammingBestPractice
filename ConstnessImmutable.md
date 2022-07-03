@@ -2,20 +2,29 @@
 
 
 Don't
-<div style="background-color: red">
 
 ```
-asdf
+List<Repo> repos = getRepos();
+
+int myRepoCount = 0;
+for(Repo repo : repos) {
+  if(repo.getOwner() == "me") {
+    myRepoCount++;
+  }
+}
 ```
 
-</div>
 
 
 Do
-
-<div style="background-color: green">
   
 ```
-```
+import com.google.common.collect.ImmutableList;
 
-</div>  
+
+final ImmutableList<Repo> repos = getRepos();
+
+final int myRepoCount = repos.stream()
+    .filter(repo -> repo.getOwner() == "me")
+    .count();
+```
