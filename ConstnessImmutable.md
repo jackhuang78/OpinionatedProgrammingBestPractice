@@ -1,8 +1,15 @@
 # Constness / Immutability
 
-## Java
+## Motivation
+Using constness/immutability whenever possible reduces the number of mutable states that the readers need to keep in mind when parsing through one's code.
 
-### Don't
+> **NOTE**: Newer langauges (e.g. Kotlin, Rust) often already provide support for this notion out of box via syntax or standard library. For older languages (e.g. Java, C++), adhering to this notion may produce more verbose code and require non-std (but well known and established) libraries.
+
+## Examples
+
+### Java
+
+#### Don't
 
 ```
 List<Repo> repos = getRepos();
@@ -15,7 +22,7 @@ for(Repo repo : repos) {
 }
 ```
 
-### Do
+#### Do
   
 ```
 import com.google.common.collect.ImmutableList;
@@ -29,8 +36,8 @@ final int myRepoCount = repos.stream()
 ```
 
 
-## C++
-### Don't
+### C++
+#### Don't
 ```
 std::vector<Repo> repos = GetRepos();
 
@@ -42,7 +49,7 @@ for(auto& repo : repos) {
 }
 ```
 
-### Do
+#### Do
 ```
 const std::vector<Repo> repos = GetRepos();
 
