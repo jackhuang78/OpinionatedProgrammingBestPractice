@@ -1,2 +1,0 @@
-# Minimizing Mutable States
-
