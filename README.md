@@ -1,7 +1,7 @@
 # Programming Best Practice
 
 ## Minimizing mutable states
-- [Constness and Immutability](ConstnessAndImmutability.md)
+- [Constness and Immutability](./ConstnessAndImmutability.md)
 - Functional programming
 
 ## Code as comments
