@@ -1,4 +1,4 @@
-# Constness / Immutability
+# Constness and Immutability
 
 ## Motivation
 Utilizing constness and immutability whenever possible reduces the number of mutable states that the readers need to keep in mind when parsing through one's code, thereby giving the readers a much easier time understanding the code correctly.
