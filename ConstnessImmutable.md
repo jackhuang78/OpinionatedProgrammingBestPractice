@@ -1,7 +1,8 @@
 # Constness / Immutability
 
+## Java
 
-Don't
+### Don't
 
 ```
 List<Repo> repos = getRepos();
@@ -14,9 +15,7 @@ for(Repo repo : repos) {
 }
 ```
 
-
-
-Do
+### Do
   
 ```
 import com.google.common.collect.ImmutableList;
@@ -28,3 +27,34 @@ final int myRepoCount = repos.stream()
     .filter(repo -> repo.getOwner() == "me")
     .count();
 ```
+
+
+## C++
+### Don't
+```
+std::vector<Repo> repos = GetRepos();
+
+int myRepoCount = 0;
+for(auto& repo : repos) {
+  if(repo.owner == "me") {
+    myRepoCount++;
+  }
+}
+```
+
+### Do
+```
+const std::vector<Repo> repos = GetRepos();
+
+const int myRepoCount = [&](){
+  int count = 0;
+  for(const auto& repo : repos) {
+    if(repo.owner == "me") {
+      count++;
+    }
+  }  
+  return count;
+}();
+
+```
+
