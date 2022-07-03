@@ -14,6 +14,7 @@
 - Arrange/Act/Assert
 - Mock dependency
 - Parameterized test
+- Builder for test object
 
 ## Others
 - Result/Error/Status type
